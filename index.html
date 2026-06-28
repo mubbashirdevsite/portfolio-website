@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Ready to Use</title>
+    <meta name="description" content="Personal portfolio with a full 3D animated background.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div class="loader" id="loader">
+        <div class="loader-mark">ZM</div>
+        <div class="loader-bar"><span id="loaderProgress"></span></div>
+    </div>
+
+    <!-- Custom cursor (desktop only, JS controlled) -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Fullscreen 3D ambient background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <header class="nav" id="nav">
+        <a href="#home" class="nav-logo" id="navLogo">ZM</a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home" class="nav-link active" data-link>Home</a>
+            <a href="#about" class="nav-link" data-link>About</a>
+            <a href="#skills" class="nav-link" data-link>Skills</a>
+            <a href="#work" class="nav-link" data-link>Work</a>
+            <a href="#contact" class="nav-link" data-link>Contact</a>
+        </nav>
+
+        <a href="#contact" class="nav-cta">Say Hello</a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" id="home">
+            <div class="hero-inner">
+                <p class="eyebrow reveal" id="heroEyebrow"></p>
+                <h1 class="hero-title">
+                    <span class="reveal" id="heroLine1"></span>
+                    <span class="reveal gradient-text" id="heroLine2"></span>
+                    <span class="reveal" id="heroLine3"></span>
+                </h1>
+                <p class="hero-subtitle reveal" id="heroSubtitle"></p>
+                <div class="hero-actions reveal">
+                    <a class="btn btn-primary" id="heroPrimaryCta" href="#work"></a>
+                    <a class="btn btn-ghost" id="heroSecondaryCta" href="#contact"></a>
+                </div>
+            </div>
+            <div class="scroll-cue" aria-hidden="true">
+                <span></span>
+                <p>Scroll</p>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="about" id="about">
+            <div class="section-head">
+                <p class="eyebrow" id="aboutEyebrow"></p>
+                <h2 class="section-title" id="aboutHeading"></h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text" id="aboutText"></div>
+
+                <div class="about-stats" id="aboutStats"></div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="skills" id="skills">
+            <div class="section-head">
+                <p class="eyebrow" id="skillsEyebrow"></p>
+                <h2 class="section-title" id="skillsHeading"></h2>
+            </div>
+
+            <div class="skills-grid" id="skillsGrid"></div>
+        </section>
+
+        <!-- WORK -->
+        <section class="work" id="work">
+            <div class="section-head">
+                <p class="eyebrow" id="workEyebrow"></p>
+                <h2 class="section-title" id="workHeading"></h2>
+            </div>
+
+            <div class="work-grid" id="workGrid"></div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="contact" id="contact">
+            <div class="contact-inner">
+                <p class="eyebrow" id="contactEyebrow"></p>
+                <h2 class="contact-heading" id="contactHeading"></h2>
+                <p class="contact-text" id="contactText"></p>
+                <a class="contact-email" id="contactEmail" href="#"></a>
+
+                <div class="contact-meta">
+                    <span id="contactLocation"></span>
+                    <div class="contact-socials" id="contactSocials"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p id="footerText"></p>
+        <p class="footer-back-to-top"><a href="#home">Back to top ↑</a></p>
+    </footer>
+
+    <!-- Data first, then the 3D scene, then the UI logic -->
+    <script src="data/data.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/three-scene.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
